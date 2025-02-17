@@ -1,0 +1,23 @@
+/* Grunden */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* Laddningsskärm */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
