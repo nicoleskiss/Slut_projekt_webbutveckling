@@ -3,9 +3,16 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: antiquewhite;
-    color: black;
+    background-color: black;
+    color: antiquewhite;
     overflow-x: hidden;
+}
+
+/* Färgtema */
+:root {
+    --yellow: #FFD700;
+    --black: #111;
+    --white: antiquewhite;
 }
 
 /* Laddningsskärm */
@@ -21,3 +28,42 @@ body {
     opacity: 1;
     transition: opacity 1s ease-out;
 }
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+/* Navigering */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    transition: color 0.3s ease;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: var(--yellow);
+}
+
