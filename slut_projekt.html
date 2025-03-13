@@ -10,100 +10,105 @@
 <body>
 
     <!-- Laddningsskärm -->
-    <div id="loading-screen">
-        <h1 class="loading-text"></h1>
+    <div id="preloader">
+        <div class="loading-text"><span id="loading-percentage">0</span>%</div>
     </div>
 
     <!-- Header -->
     <header>
-        <h1 class="logo">Lucky 13 Ink</h1>
+        <div class="logo">Lucky 13 Ink</div>
         <nav>
             <ul>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#artists">Artists</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Booking</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- "Main" sektion -->
-    <section id="main">
-        <div class="main-content">
-            <h2 class="fade-in">Ink your story, wear your art</h2>
-            <a href="#portfolio" class="cta-button">See portfolio</a>
+    <!-- "Hero" sektion -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Ink your story, wear your art</h1>
+            <p>Exclusive tattoostudio where creativity meets perfection.</p>
+            <button onclick="scrollToGallery()">Explore</button>
         </div>
+    </section>
+
+    <!-- "Om oss" sektion -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a crew of very passionate people from all over the world, we speak twelve different languages, who loves to create a lifetime worth of art and memories. Our shop has five permanent artist, one apprentice, and one shop manager that is happy to talk to everyone that is interested in what we do but also if you have any specific questions about the procedure, the design or just how bad it hurts! 
+            We are also proud to have a big range of guest artist regularly visiting us. So whatever style you’re looking for, we have it! 
+            
+            If you want to see more of what we do in the shop, tattoos, designs, drawings, general fun stuff that happens we recommend to visit our Instagram @squid.n.ink and give us a follow. From Tuesdays-Saturdays we update you guys with upcoming events, guest-artist that will visit and all the work we do. You also get a view of all the artists and a look of how the studio is in live acton! 
+            
+            Our shop is located in the beautiful Old Town of Stockholm, two minutes walking distance from the subway, we are in the heart of this city and on just our street you can see two churches at the same time, you have Storkyrkan which is just a 2 minute walk from the shop but also Riddarholmskyrkan with its very gothic architecture. 
+            It is Stockholm’s only preserved medieval abbey.
+            
+            You can also visit the famous jazz bar Stampen, where you can enjoy a cold beverage to some awesome music. And continue walk along the very busy Västerlånggatan toward the many boutiques, coffees shop and restaurant.</p>
     </section>
 
     <!-- Portfolio sektion (Gallery) -->
     <!-- Jag använde Ar.bel 's verk i portfolio delen av hemsidan, eftersom det var komplicerat att AI-generera specifika tatueringar. Hon är en hyfsat känd tatuerare i LA. Här är hennes hemsida arbeltattoo.com -->
-    <section id="portfolio">
-        <h2 class="fade-in">Our Work</h2>
-        <div class="gallery">
-            <img src="images/tattoo 1.jpg" alt="Tattoo 1" class="portfolio-img">
-            <img src="images/tattoo 2.jpg" alt="Tattoo 2" class="portfolio-img">
-            <img src="images/tattoo 3.jpg" alt="Tattoo 3" class="portfolio-img">
-            <img src="images/tattoo 4.jpg" alt="Tattoo 4" class="portfolio-img">
-            <img src="images/tattoo 5.jpg" alt="Tattoo 5" class="portfolio-img">
-            <img src="images/tattoo 6.jpg" alt="Tattoo 6" class="portfolio-img">
-            <img src="images/tattoo 7.jpg" alt="Tattoo 7" class="portfolio-img">
-            <img src="images/tattoo 8.jpg" alt="Tattoo 8" class="portfolio-img">
-            <img src="images/tattoo 9.jpg" alt="Tattoo 9" class="portfolio-img">
-            <img src="images/tattoo 10.jpg" alt="Tattoo 10" class="portfolio-img">
-            <img src="images/tattoo 11.jpg" alt="Tattoo 11" class="portfolio-img">
-            <img src="images/tattoo 12.jpg" alt="Tattoo 12" class="portfolio-img">
-        </div>
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container"></div>
     </section>
 
     <!-- Tatuerare -->
     <!-- Jag AI-genererade bilder på tatuerare mha Canva.com, samt använde jag ChatGPT för att generera namn och beskrivningar för de. -->
-     <section id="artists">
-        <h2 class="fade-in">Our Artists</h2>
-        <div class="artist">
-            <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera.jpg" alt="Tatuerare 1">
-            <h3>Sophia Müller</h3>
-            <p>Sophia is a master of black & grey realism, bringing lifelike portraits, skulls, and religious imagery to life with smooth shading and depth. Her whip shading technique creates soft gradients, making her tattoos look like they are straight out of a photograph. Whether it’s a highly detailed face, an intricate animal design, or a gothic masterpiece, Sophia's precision and artistic eye make her one of the best in the business.</p>
-        </div>
-        <div class="artist">
-            <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera, men.jpg" alt="Tatuerare 2">
-            <h3>Diego Navarro</h3>
-            <p>Diego is known for his bold, neo-traditional designs and Japanese-inspired tattoos. He combines thick outlines, vibrant colors, and detailed shading to create powerful and expressive designs. From fierce dragons and koi fish to classic neo-traditional roses and skulls, Diego’s work is a fusion of tradition and modern artistry. His tattoos have a strong visual impact and a timeless appeal.</p>
-        </div>
-        <div class="artist">
-            <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera (2).jpg" alt="Tatuerare 3">
-            <h3>Eva Laurent</h3>
-            <p>Eva specializes in fine line tattoos, creating elegant and delicate designs with razor-thin precision. She is highly skilled in minimalist tattoos, single-needle techniques, and micro tattoos. Her work is perfect for those who want subtle yet meaningful pieces, such as small floral designs, minimalist portraits, and abstract linework.</p>
-        </div>
-        <div class="artist">
-            <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera (1).jpg" alt="Tatuerare 4">
-            <h3>Freya Andersen</h3>
-            <p>Freya's tattoos are bold, dark, and intense. Specializing in blackwork and dark art, she creates intricate, high-contrast tattoos with heavy black shading and strong negative space. Her style is inspired by gothic imagery, occult symbols, and surrealist horror, making her work ideal for those who love edgy and dramatic tattoos.</p>
-        </div>
-     </section>
-
-    <!-- Vår Studio -->
-    <section id="studio">
-        <h2 class="fade-in">Our Studio</h2>
-        <div class="studio-info">
-        <div class="studio-text">
-            <p>Welcome to Lucky 13 Ink! We are located in the heart of the city and offer an inspiring environment for world-class tattoos.</p>
-            <p><strong>📍 Address:</strong> Storgatan 13, 111 22 Stockholm</p>
-            <p><strong>🕒 Opening Hours:</strong>  
-                <br>Mon-Fri: 11:00 - 19:00  
-                <br>Sat-Sun: 12:00 - 17:00  
-            </p>
-        </div>
-     
-        <div class="studio-gallery">
-            <img src="images/a modern tattoo studio called _Lucky 13 Ink_ in stockholm old town from the outside .jpg" alt="Tatueringsstudio interiör" class="studio-img">
-            <img src="images/a modern tattoo studio with yellow walls .jpg" alt="Tatueringsstol" class="studio-img">
-            <img src="images/a tattoo studio with yellow walls  (1).jpg" alt="Studio reception" class="studio-img">
-        </div>
+    <section id="artists">
+        <h2>Our Artists</h2>
+        <div class="artists-container">
+            <div class="artist">
+                <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera.jpg" alt="Tatuerare 1">
+                <h3>Sophia Müller</h3>
+                <p>Sophia is a master of black & grey realism, bringing lifelike portraits, skulls, and religious imagery to life with smooth shading and depth. Her whip shading technique creates soft gradients, making her tattoos look like they are straight out of a photograph. Whether it’s a highly detailed face, an intricate animal design, or a gothic masterpiece, Sophia's precision and artistic eye make her one of the best in the business.</p>
+            </div>
+            <div class="artist">
+                <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera, men.jpg" alt="Tatuerare 2">
+                <h3>Diego Navarro</h3>
+                <p>Diego is known for his bold, neo-traditional designs and Japanese-inspired tattoos. He combines thick outlines, vibrant colors, and detailed shading to create powerful and expressive designs. From fierce dragons and koi fish to classic neo-traditional roses and skulls, Diego’s work is a fusion of tradition and modern artistry. His tattoos have a strong visual impact and a timeless appeal.</p>
+            </div>
+            <div class="artist">
+                <img src="images/a tattoo studio employee portrait with a yellow background and that they look into the camera (2).jpg" alt="Tatuerare 3">
+                <h3>Eva Laurent</h3>
+                <p>Eva specializes in fine line tattoos, creating elegant and delicate designs with razor-thin precision. She is highly skilled in minimalist tattoos, single-needle techniques, and micro tattoos. Her work is perfect for those who want subtle yet meaningful pieces, such as small floral designs, minimalist portraits, and abstract linework.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Kontakt -->
+    <!-- Studio -->
+    <section id="studio">
+        <h2>Our Studio</h2>
+        <div class="studio-content">
+            <img src="images/a modern tattoo studio called _Lucky 13 Ink_ in stockholm old town from the outside .jpg" alt="Tatueringsstudio">
+            <div class="studio-info">
+                <p><strong>Adress:</strong> Klappbryggan 45, Åkersberga</p>
+                <p><strong>Open Hours:</strong> Mon-Sat: 10:00 - 19:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bokningsformulär -->
+    <section id="booking">
+        <h2>Booking</h2>
+        <form id="booking-form">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your e-mail" required>
+            <input type="date" required>
+            <textarea placeholder="Describe your tattoo"></textarea>
+            <button type="submit">Book</button>
+        </form>
+        <p id="booking-message"></p>
+    </section>
+
+    <!-- Kontakt sektion -->
     <section id="contact">
-        <h2 class="fade-in">Contact Us</h2>
+        <h2>Contact Us</h2>
         <p>Visit us or book an appointment via our contact form.</p>
     </section>
      
