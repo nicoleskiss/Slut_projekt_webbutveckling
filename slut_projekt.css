@@ -1,10 +1,12 @@
 /* Grunden */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: antiquewhite;
+    background: url('images/IMG_7174.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
     overflow-x: hidden;
 }
 
@@ -20,28 +22,33 @@ body {
     font-size: 2rem;
     color: white;
     z-index: 9999;
+    transition: opacity 1s ease-in-out;
 }
 
 .loading-text {
     font-size: 2rem;
+    font-weight: bold;
 }
 
 /* Header */
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     transition: background 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Navigering */
@@ -55,11 +62,13 @@ nav a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
     color: red;
+    transform: scale(1.1);
 }
 
 /* Hero-sektion */
@@ -68,17 +77,26 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(https://images.squarespace-cdn.com/content/v1/5d28f4b7185dca00019f5c81/1688737079295-E9PYMQ6ZH0LV7CP44OSL/IMG_7174.jpg?format=2500w) no-repeat center center/cover;
     text-align: center;
-}
-
-.hero-content {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
     animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 80px 20px;
 }
 
 /* Galleri */
@@ -130,7 +148,7 @@ nav a:hover {
 }
 
 .artist:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Studio-sektion */
@@ -155,4 +173,3 @@ nav a:hover {
     max-width: 400px;
     text-align: left;
 }
-
