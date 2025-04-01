@@ -71,7 +71,7 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Hero-sektion */
+/* Main-sektion */
 #hero {
     height: 100vh;
     display: flex;
@@ -95,6 +95,7 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
+/* Sektioner */
 section {
     padding: 80px 20px;
 }
