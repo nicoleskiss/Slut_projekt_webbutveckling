@@ -17,7 +17,7 @@ function loadingScreen() {
             }});
         }
     }, 200);
-}
+} 
 
 // Animationer
 gsap.from("#hero h1", { opacity: 0, y: -50, duration: 1 });

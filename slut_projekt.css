@@ -130,15 +130,16 @@ section {
 .artists-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .artist {
-    background: #222;
+    margin: 0;
     padding: 20px;
+    background: #222;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
 }
 
 .artist img {
@@ -146,10 +147,6 @@ section {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.artist:hover {
-    transform: scale(1.1);
 }
 
 /* Studio-sektion */
