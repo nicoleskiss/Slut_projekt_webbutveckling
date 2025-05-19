@@ -47,10 +47,6 @@ function loadingScreen() {
 }
 
 // GSAP-animationer för olika sektioner
-// Hero-sektion: fade in och knapp-animation
-gsap.from("#hero .hero-content", { opacity: 0, y: 60, duration: 1, ease: "power2.out" });
-gsap.from("#hero button", { scale: 0.8, opacity: 0, duration: 0.7, delay: 1, ease: "back.out(1.7)" });
-
 // Galleri: rubrik och bilder
 gsap.from("#gallery h2", { opacity: 0, y: 40, duration: 0.8, delay: 0.2 });
 gsap.from(".gallery-container img", { opacity: 0, y: 40, duration: 0.8, stagger: 0.15, delay: 0.4 });
