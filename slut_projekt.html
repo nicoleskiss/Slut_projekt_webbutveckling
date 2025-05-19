@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Laddningsskärm -->
+    <!-- Laddningsskärm (Den gör verkligen ingenting jag ville bara ha den för aesthetics.)-->
     <div id="preloader">
         <div class="loading-text"><span id="loading-percentage">0</span>%</div>
     </div>
@@ -23,10 +23,14 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#artists">Artists</a></li>
                 <li><a href="#booking">Booking</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="nav-toggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
     <!-- "Main" sektion -->
@@ -101,13 +105,13 @@
     <section id="booking">
         <h2>Booking</h2>
         <form id="booking-form">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your e-mail" required>
-            <input type="date" required>
-            <textarea placeholder="Describe your tattoo"></textarea>
-            <button type="submit">Book</button>
-        </form>
-        <p id="booking-message"></p>
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Your e-mail" required>
+                <input type="date" required>
+                <textarea placeholder="Describe your tattoo idea"></textarea>
+                <button type="submit">Book</button>
+            </form>
+            <p id="booking-message"></p>
     </section>
 
     <!-- Kontakt sektion -->
@@ -116,6 +120,6 @@
         <p><strong>Contact:</strong> info@lucky13ink.com | +46 762 974 811</p>
         <p>Visit us or book an appointment via our contact form</p>
     </section>
-     
+
 </body>
 </html>
