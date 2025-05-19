@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Bokningsformulär
     const bookingForm = document.getElementById("booking-form");
     const bookingMessage = document.getElementById("booking-message");
 
@@ -42,7 +41,6 @@ function loadingScreen() {
     }, 200);
 }
 
-    // Modal för att visa stor bild
     const modal = document.getElementById("image-modal");
     const modalImg = document.getElementById("modal-image");
     const artistImages = document.querySelectorAll(".artist img");
@@ -54,9 +52,17 @@ function loadingScreen() {
         });
     });
 
-    // Stäng modalen vid klick utanför bilden
     modal.addEventListener("click", (e) => {
         if (e.target.classList.contains("close-area")) {
             modal.style.display = "none";
         }
     });
+
+const galleryImages = document.querySelectorAll(".gallery-container img");
+
+galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+    });
+});
