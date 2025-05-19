@@ -1,16 +1,14 @@
-// Väntar tills sidan är laddad
-document.addEventListener("DOMContentLoaded", () => { 
-    loadingScreen(); // Startar laddningsskärmen
+document.addEventListener("DOMContentLoaded", () => {
+    loadingScreen();
 
-    // Hamburger-meny: öppna/stäng navigation på mobil
     const navToggle = document.querySelector('.nav-toggle');
     const navUl = document.querySelector('nav ul');
+
     navToggle.addEventListener('click', () => {
         navUl.classList.toggle('open');
         navToggle.classList.toggle('open');
     });
 
-    // Stänger menyn när man klickar på en länk (mobil)
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
             navUl.classList.remove('open');
@@ -18,63 +16,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Smooth scroll till galleri 
-    const exploreBtn = document.querySelector('.hero-content button');
-    if (exploreBtn) {
-        exploreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
-        });
-    }
+    // Bokningsformulär
+    const bookingForm = document.getElementById("booking-form");
+    const bookingMessage = document.getElementById("booking-message");
+
+    bookingForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        bookingMessage.innerText = "Du har bokat din tid, se mail för mer information.";
+        bookingForm.reset();
+    });
 });
 
-// Laddningsskärm (preloader)
 function loadingScreen() {
-    let percentage = 0;
+    let percent = 0;
     let interval = setInterval(() => {
-        percentage += Math.floor(Math.random() * 10);
-        if (percentage > 100) percentage = 100;
-        document.getElementById("loading-percentage").innerText = percentage;
+        percent += Math.floor(Math.random() * 10);
+        if (percent > 100) percent = 100;
 
-        // När laddningen är klar, tona ut preloadern
-        if (percentage === 100) {
+        document.getElementById("loading-percentage").innerText = percent;
+
+        if (percent === 100) {
             clearInterval(interval);
-            gsap.to("#preloader", { opacity: 0, duration: 1, onComplete: () => {
-                document.getElementById("preloader").style.display = "none";
-            }});
+            document.getElementById("preloader").style.display = "none";
         }
     }, 200);
 }
 
-// GSAP-animationer för olika sektioner
-// Galleri: rubrik och bilder
-gsap.from("#gallery h2", { opacity: 0, y: 40, duration: 0.8, delay: 0.2 });
-gsap.from(".gallery-container img", { opacity: 0, y: 40, duration: 0.8, stagger: 0.15, delay: 0.4 });
+    // Modal för att visa stor bild
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-image");
+    const artistImages = document.querySelectorAll(".artist img");
 
-// Artists: rubrik och varje artist-kort
-gsap.from("#artists h2", { opacity: 0, y: 40, duration: 0.8, delay: 0.2 });
-gsap.from(".artist", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    scrollTrigger: {
-        trigger: "#artists",
-        start: "top 80%",
-        toggleActions: "play none none none"
-    }
-});
+    artistImages.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        });
+    });
 
-// Studio-sektion: rubrik och bilder/info
-gsap.from("#studio h2", { opacity: 0, y: 40, duration: 0.8, delay: 0.2 });
-gsap.from(".studio-content img, .studio-info", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    scrollTrigger: {
-        trigger: "#studio",
-        start: "top 80%",
-        toggleActions: "play none none none"
-    }
-});
+    // Stäng modalen vid klick utanför bilden
+    modal.addEventListener("click", (e) => {
+        if (e.target.classList.contains("close-area")) {
+            modal.style.display = "none";
+        }
+    });

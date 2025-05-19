@@ -1,88 +1,71 @@
-/* Variabler för färger, skuggor och övergångar */
 :root {
-    --primary: #fff653;           /* Huvudfärg (gul) */
-    --primary-dark: #8a8610;      /* Mörkare variant av huvudfärgen */
-    --bg: #181818;                /* Bakgrundsfärg */
-    --surface: #232323;           /* Ytfärg för kort och sektioner */
-    --text: #fff;                 /* Standard textfärg */
-    --text-muted: #bbbbbb;        /* Dämpad textfärg */
-    --radius: 14px;               /* Standard hörnavrundning */
-    --shadow: 0 4px 24px rgba(0,0,0,0.15); /* Skugga för element */
+    --primary: #ffffff;
+    --primary-dark: #cccccc;
+    --bg: #000000;
+    --surface: #1a1a1a;
+    --text: #ffffff;
+    --text-muted: #aaaaaa;
+    --radius: 14px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
 }
 
-/* Nollställning av marginaler och padding, samt box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Grundläggande styling för body */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     text-align: center;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
 }
 
-/* Länkar utan understrykning och med övergång */
 a {
     color: inherit;
     text-decoration: none;
-    transition: color var(--transition);
+    transition: var(--transition);
 }
 
-/* Header med flexbox för horisontell layout och sticky effekt */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(24,24,24,0.96);
-    padding: 1.2em 2vw;
+    background: #000;
+    padding: 1em 2vw;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
 }
 
-/* Logotypen */
 .logo {
-    font-size: 1.7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    font-weight: bold;
     color: var(--primary);
     text-transform: uppercase;
 }
 
-/* Navigationsmeny som horisontell lista */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.2em;
+    gap: 1em;
 }
 
-/* Navigationslänkar */
 nav a {
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 0.5em 1.1em;
+    padding: 0.5em 1em;
     border-radius: var(--radius);
-    transition: background var(--transition), color var(--transition), transform var(--transition);
-    color: var(--text);
+    transition: var(--transition);
 }
 
-/* Hover-effekt på navigationslänkar */
-nav a:hover,
-nav a.active {
+nav a:hover {
     background: var(--primary);
-    color: #fff;
-    transform: translateY(-2px) scale(1.07);
+    color: #000;
 }
 
-/* Hamburger-meny för mobil */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -93,420 +76,271 @@ nav a.active {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 1em;
 }
+
 .nav-toggle span {
-    display: block;
     width: 28px;
     height: 3px;
     background: var(--primary);
     margin: 5px 0;
     border-radius: 2px;
-    transition: all 0.3s;
 }
 
-/* Responsiv navigation för mindre skärmar */
 @media (max-width: 900px) {
     nav ul {
+        flex-direction: column;
         position: absolute;
         top: 70px;
         right: 2vw;
-        background: rgba(24,24,24,0.98);
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5em;
+        background: #000;
         padding: 1em 2em;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
         display: none;
     }
+
     nav ul.open {
         display: flex;
     }
+
     .nav-toggle {
         display: flex;
     }
-}
 
-@media (max-width: 700px) {
     header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1em 1vw;
-    }
-    .logo {
-        margin-bottom: 0.5em;
     }
 }
 
-/* Laddningsskärm */
 #preloader {
     position: fixed;
     inset: 0;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2rem;
+    background: #000;
     color: var(--primary);
-    z-index: 9999;
-    transition: opacity 1s;
-}
-
-.loading-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 0.1em;
+    z-index: 9999;
 }
 
-/* Huvud innehhåll */
-main {
-    width: 100%;
-}
-
-/* Sektioner med maxbredd och centrering */
 section {
     padding: 3em 1.5em;
     max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
+    margin: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Rubriker */
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
 h2 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    margin-bottom: 0.7em;
+    font-size: 2rem;
     color: var(--primary);
-    letter-spacing: 0.04em;
+    margin-bottom: 1em;
 }
 
-h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.3em;
-    color: var(--text);
-}
-
-/* Paragrafer */
 p {
     color: var(--text-muted);
-    margin-bottom: 0.7em;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-bottom: 1em;
 }
 
-/* Hero-sektion */
 #hero {
     min-height: 60vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: linear-gradient(120deg, rgba(24,24,24,0.92) 60%, rgba(230, 227, 57, 0.263)), url('images/background.jpg') no-repeat center center/cover;
+    align-items: center;
+    background: url('images/background.jpg') center center/cover no-repeat;
     border-radius: 0 0 var(--radius) var(--radius);
-    margin-bottom: 2em;
     box-shadow: var(--shadow);
-    animation: fadeIn 1.2s;
 }
 
 .hero-content {
-    background: rgba(24,24,24,0.7);
-    padding: 2.5em 1.5em;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2em;
     border-radius: var(--radius);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-    animation: fadeUp 1.2s;
+    box-shadow: var(--shadow);
 }
 
-.hero-content h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5em;
-    color: #fff;
-    letter-spacing: 0.05em;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5em;
-}
-
-/* Knappar i hero-sektionen */
 .hero-content button {
-    padding: 0.8em 2.2em;
-    font-size: 1.1rem;
+    padding: 0.8em 2em;
+    font-size: 1rem;
     border: none;
     border-radius: var(--radius);
     background: var(--primary);
-    color: #fff;
-    font-weight: 600;
+    color: #000;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(230, 227, 57, 0.13);
-    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-    outline: none;
+    transition: var(--transition);
 }
 
-/* Hover-effekt på knappar */
-.hero-content button:hover {
+.hero-content button:hover,
+.hero-content button:active {
     background: var(--primary-dark);
-    transform: translateY(-2px) scale(1.06);
-    box-shadow: 0 4px 16px rgba(230,57,70,0.18);
+    color: #000;
 }
 
-/* Animationer */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px);}
-    to   { opacity: 1; transform: translateY(0);}
-}
-
-/* Galleriet */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5em;
-    margin-top: 2em;
 }
 
-/* Bilder i galleriet med hover-effekt */
 .gallery-container img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     border-radius: var(--radius);
-    transition: transform var(--transition), box-shadow var(--transition);
+    background: #111;
     box-shadow: var(--shadow);
-    background: #222;
+    transition: var(--transition);
+    border: 1px solid #fff;
     cursor: pointer;
 }
 
-.gallery-container img:hover {
-    transform: scale(1.04) translateY(-4px);
-    box-shadow: 0 8px 32px rgba(230,57,70,0.13);
+.gallery-container img:hover,
+.gallery-container img:active {
+    transform: scale(1.03);
 }
 
-/* Tatuerare */
 .artists-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2em;
-    flex-wrap: wrap;
-    margin-top: 2em;
 }
 
 .artist {
     background: var(--surface);
-    padding: 2em 1em 1.2em 1em;
+    padding: 2em 1em;
     border-radius: var(--radius);
-    text-align: center;
-    width: 260px;
-    margin-bottom: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     box-shadow: var(--shadow);
-    transition: transform var(--transition), box-shadow var(--transition);
-    border: 1px solid rgba(255,255,255,0.03);
+    max-width: 260px;
+    border: 1px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-/* Artist-bilder med hover-effekt */
 .artist img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1em;
-    border: 3px solid var(--primary);
-    box-shadow: 0 2px 8px rgba(230, 224, 57, 0.08);
-    background: #181818;
-    transition: transform var(--transition), box-shadow var(--transition);
-    cursor: pointer;
+    border: 2px solid var(--primary);
+    transition: var(--transition);
 }
 
-.artist img:hover {
-    transform: scale(1.09) rotate(-2deg);
-    box-shadow: 0 8px 32px rgba(230,57,70,0.13);
+.artist img:hover,
+.artist img:active {
+    transform: scale(1.1);
 }
 
 .artist:hover {
-    transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 8px 32px rgba(230, 218, 57, 0.13);
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
-.artist h3 {
-    margin-bottom: 0.3em;
+
+/* Modal för stor bild */
+#image-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 
-.artist p {
-    font-size: 1rem;
-    color: var(--text-muted);
+#image-modal img {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 3px solid white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
-/* Studio */
+#image-modal.close-area {
+    cursor: pointer;
+}
+
 .studio-content {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2em;
     flex-wrap: wrap;
-    margin-top: 2em;
+    gap: 2em;
+    justify-content: center;
 }
 
 .studio-content img {
     width: 340px;
-    max-width: 90vw;
     border-radius: var(--radius);
-    margin-bottom: 1em;
     box-shadow: var(--shadow);
-    background: #222;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition: var(--transition);
+    border: 1px solid #fff;
     cursor: pointer;
 }
 
-.studio-content img:hover {
-    transform: scale(1.07) rotate(1.5deg);
-    box-shadow: 0 8px 32px rgba(230,57,70,0.13);
+.studio-content img:hover,
+.studio-content img:active {
+    transform: scale(1.03);
 }
 
 .studio-info {
     max-width: 400px;
-    text-align: left;
-    color: #fff;
-    margin: 0 auto;
-    background: rgba(24,24,24,0.7);
-    padding: 1.2em 1em;
+    background: #111;
+    padding: 1em;
     border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.studio-info p {
-    color: var(--text-muted);
-    margin-bottom: 0.5em;
-    font-size: 1.05rem;
-}
-
-/* Bokningsformulär */
 #booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    max-width: 400px;
-    margin: 2em auto 0 auto;
     background: var(--surface);
-    padding: 2em 1em;
+    padding: 2em;
+    max-width: 400px;
+    margin: auto;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    border: 1px solid #fff;
 }
 
 #booking-form input,
 #booking-form textarea {
+    width: 100%;
     padding: 0.8em;
-    border-radius: var(--radius);
     border: none;
-    font-size: 1em;
-    background: #232323;
+    border-radius: var(--radius);
+    background: #222;
     color: #fff;
-    margin-bottom: 0.5em;
-    outline: none;
-    transition: box-shadow var(--transition), border var(--transition);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-#booking-form input:focus,
-#booking-form textarea:focus {
-    border: 1.5px solid var(--primary);
-    box-shadow: 0 2px 8px rgba(230, 204, 57, 0.13);
-}
-
-#booking-form textarea {
-    min-height: 80px;
-    resize: vertical;
+    margin-bottom: 1em;
 }
 
 #booking-form button {
+    background: var(--primary);
+    color: #000;
+    font-weight: bold;
+    border: none;
     padding: 0.8em;
     border-radius: var(--radius);
-    border: none;
-    background: var(--primary);
-    color: #fff;
-    font-size: 1em;
     cursor: pointer;
-    font-weight: 600;
-    transition: background var(--transition), transform var(--transition);
-    margin-top: 0.5em;
+    transition: var(--transition);
 }
 
-#booking-form button:hover {
+#booking-form button:hover,
+#booking-form button:active {
     background: var(--primary-dark);
-    transform: translateY(-2px) scale(1.04);
 }
 
 #booking-message {
-    color: var(--primary);
-    font-weight: 500;
+    color: #fff;
     margin-top: 1em;
+    font-weight: 600;
 }
 
-/* Footer */
 footer {
-    background: rgba(24,24,24,0.96);
-    color: #bbb;
-    padding: 1.2em 0;
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.98em;
-    border-radius: var(--radius) var(--radius) 0 0;
-    box-shadow: var(--shadow);
-}
-
-@media (max-width: 1100px) {
-    section {
-        max-width: 98vw;
-    }
-}
-
-@media (max-width: 900px) {
-    .artists-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .artist {
-        width: 90vw;
-        max-width: 340px;
-    }
-    .studio-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .studio-content img {
-        width: 90vw;
-        max-width: 400px;
-    }
-    .studio-info {
-        text-align: center;
-    }
-}
-
-@media (max-width: 700px) {
-    .logo {
-        margin-bottom: 0.5em;
-    }
-    #hero {
-        padding: 2em 0.5em;
-        border-radius: 0 0 var(--radius) var(--radius);
-    }
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-    .gallery-container {
-        grid-template-columns: 1fr;
-        gap: 1em;
-    }
-    .gallery-container img {
-        height: 160px;
-    }
-    section {
-        padding: 2em 0.5em;
-    }
+    background: #000;
+    color: var(--text-muted);
+    padding: 1em 0;
+    font-size: 0.9rem;
+    margin-top: 3em;
 }
