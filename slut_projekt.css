@@ -1,3 +1,4 @@
+/* CSS-variabler för färger, rundning, skuggor och animationer */
 :root {
     --primary: #ffffff;
     --primary-dark: #cccccc;
@@ -13,7 +14,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Gör så att padding och border inkluderas i elementens totala storlek */
 }
 
 body {
@@ -49,6 +50,7 @@ header {
     text-transform: uppercase;
 }
 
+/* Horisontell lista i desktop, vertikal i mobil */
 nav ul {
     list-style: none;
     display: flex;
@@ -66,6 +68,7 @@ nav a:hover {
     color: #000;
 }
 
+/*  Hamburgermeny synlig bara på mobila enheter */
 .nav-toggle {
     display: none;
     flex-direction: column;
