@@ -351,7 +351,8 @@ html {
 }
 
 .map-container {
-    margin-top: 1em;
+    margin: 1em auto;
+    max-width: 600px;
     overflow: hidden;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
